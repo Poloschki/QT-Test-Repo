@@ -8,7 +8,6 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
     scene = new QGraphicsScene(this);
-    //ui->graphicsView->fitInView(400,400,300,300);
     ui->graphicsView->setScene(scene);
     //Pour avoir le fond en gris foncé
     ui->graphicsView->setBackgroundBrush(QBrush(Qt::darkGray, Qt::SolidPattern));

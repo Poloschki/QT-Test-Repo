@@ -9,7 +9,7 @@ Rectangle::Rectangle()
 QRectF Rectangle::boundingRect() const
 {
     //position du rectangle couleur Cyan
-    return QRect(0,-30,45,45);
+    return QRect(0,-0,45,45);
 }
 
 void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
