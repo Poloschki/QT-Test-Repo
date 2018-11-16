@@ -47,6 +47,7 @@ void Dialog::on_pushButton_pressed()
      //Pour pouvoir déplacer le rectangle
         arbre->setFlag(QGraphicsItem::ItemIsMovable);
 
+
 }
 
 //  Bouton pour le rocher
