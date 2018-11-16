@@ -22,8 +22,6 @@ Dialog::Dialog(QWidget *parent) :
 //      Comment instancier le rectangle de la classe Rectangle
     rect  = new Rectangle();       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
     scene->addItem(rect);
-
-
 }
 
 Dialog::~Dialog()
@@ -46,8 +44,6 @@ void Dialog::on_pushButton_pressed()
         arbre = scene->addRect(45,45,45,45,blackpen,greenBrush);
      //Pour pouvoir déplacer le rectangle
         arbre->setFlag(QGraphicsItem::ItemIsMovable);
-
-
 }
 
 //  Bouton pour le rocher
