@@ -12,6 +12,8 @@ Dialog::Dialog(QWidget *parent) :
     //essaie de délimitation de la fenêtre GraphicsView
     ui->graphicsView->setFixedSize(800,600);
     ui->graphicsView->setMaximumSize(800,600);
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
     ui->graphicsView->setScene(scene);
@@ -20,8 +22,8 @@ Dialog::Dialog(QWidget *parent) :
     ui->graphicsView->setBackgroundBrush(QBrush(Qt::darkGray, Qt::SolidPattern));
 
 //      Comment instancier le rectangle de la classe Rectangle
-    rect  = new Rectangle();       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
-    scene->addItem(rect);
+//    rect  = new Rectangle();       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
+//    scene->addItem(rect);
 }
 
 Dialog::~Dialog()
