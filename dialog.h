@@ -8,16 +8,16 @@
 #include <QRect>
 
 namespace Ui {
-    class Dialog;
+    class Rect;
 }
 
-class Dialog : public QDialog
+class dialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Dialog(QWidget *parent = 0);
-    ~Dialog();
+    explicit dialog(QWidget *parent = 0);
+    ~dialog();
 
 private slots:
     void on_pushButton_pressed();
@@ -25,13 +25,11 @@ private slots:
     void on_pushButton_2_pressed();
 
 private:
-    Ui::Dialog *ui;
+    Ui::Rect *ui;
     QGraphicsScene *scene;
-    QGraphicsRectItem *arbre;
-    QGraphicsRectItem *rocher;
 
-    Rectangle *rect;
-
+    Rectangle *arbre;
+    Rectangle *rocher;
 };
 
 #endif // DIALOG_H

@@ -25,12 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        dialog.cpp \
-    rectangle.cpp
+    rectangle.cpp \
+    dialog.cpp
 
 HEADERS += \
-        dialog.h \
-    rectangle.h
+    rectangle.h \
+    dialog.h
 
 FORMS += \
         dialog.ui

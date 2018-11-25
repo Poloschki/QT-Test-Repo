@@ -7,18 +7,21 @@
  * Problèmes :
  * - faut générer la mémoire et la destruction des objets qui ne
  * se fait pas tout seul
- * - Difficile de faire une boucle pour instancier N objet pour
- * qu'ils soient indépendants
  *
  */
 
 
-Rectangle::Rectangle()
+Rectangle::Rectangle(int obj)
 {
     //attributs d'un Rectangle
 
     Pressed = false; // Utiliser pour lui faire changer de couleur lorsqu'on appuie dessus
     setFlag(ItemIsMovable); // Permet de déplacer librement le rectangle
+
+    //Enregistrement de quel type d'objet il s'agit
+    if (obj == ARBRE) objet=ARBRE;
+    if (obj == ROCHER)objet= ROCHER;
+
 }
 
 QRectF Rectangle::boundingRect() const
@@ -31,17 +34,21 @@ void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 {
     //création du rectangle 45*45 à la position (10,10)
     QRectF rec = boundingRect();
-    //couleur de l'intérieur du Rectangle : cyan foncé
-    QBrush brush(Qt::darkCyan);
 
+    //couleur initial, utilisé pour changer en fonction de l'objet
+    QBrush brush (Qt::white);
+
+    //couleur de l'intérieur du Rectangle
+    if(objet == ROCHER) brush.setColor(Qt::gray);
+    if(objet == ARBRE)  brush.setColor(Qt::darkGreen);
 
     // le rectangle change de couleur lorsqu'on appuie dessus
     if(Pressed)
     {
-        brush.setColor(Qt::red);
-
+       brush.setColor(Qt::red);
     }
-    //On paint le Rectangle ici
+
+    //On affiche le Rectangle ici
     painter->fillRect(rec,brush);
     painter->drawRect(rec);
 
