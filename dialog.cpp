@@ -34,31 +34,39 @@ Dialog::~Dialog()
 //  Bouton pour l'arbre
 void Dialog::on_pushButton_pressed()
 {
+    arbre  = new Rectangle(ARBRE);       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
+    scene->addItem(arbre);
 
-    //Donne la couleur à l'intérieur du rectangle : ici vert foncé
-    QBrush greenBrush(Qt::darkGreen); //les arbres/ arbustes
-    //Donne la couleur du conteur du rectangle : ici noir
-    QPen blackpen(Qt::black);          // le contour des rectangles
-    //Donne l'épaisseur du contour
-    blackpen.setWidth(1);
 
-    // Ajout de 1 "arbre" de 45*45 à la position (45,45)
-        arbre = scene->addRect(45,45,45,45,blackpen,greenBrush);
-     //Pour pouvoir déplacer le rectangle
-        arbre->setFlag(QGraphicsItem::ItemIsMovable);
+
+//    //Donne la couleur à l'intérieur du rectangle : ici vert foncé
+//    QBrush greenBrush(Qt::darkGreen); //les arbres/ arbustes
+//    //Donne la couleur du conteur du rectangle : ici noir
+//    QPen blackpen(Qt::black);          // le contour des rectangles
+//    //Donne l'épaisseur du contour
+//    blackpen.setWidth(1);
+
+//    // Ajout de 1 "arbre" de 45*45 à la position (45,45)
+//        arbre = scene->addRect(45,45,45,45,blackpen,greenBrush);
+//     //Pour pouvoir déplacer le rectangle
+//        arbre->setFlag(QGraphicsItem::ItemIsMovable);
 }
 
 //  Bouton pour le rocher
 void Dialog::on_pushButton_2_pressed()
 {   //Même fonction que pour la création des arbres sauf que la couleur intérieur est différente
 
-    QBrush greyBrush(Qt::gray);       //les rochers
-    QPen blackpen(Qt::black);          // le contour des rectangles
-    blackpen.setWidth(1);
+    rocher = new Rectangle(ROCHER);       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
+    scene->addItem(rocher);
 
-    // Ajout de 1 "rocher" de 45*45 à la position (0,0)
-        rocher = scene->addRect(0,0,45,45,blackpen,greyBrush);
-        // On peut déplacer le rectangle de type "Rocher"
-        rocher->setFlag(QGraphicsItem::ItemIsMovable);
+
+//    QBrush greyBrush(Qt::gray);       //les rochers
+//    QPen blackpen(Qt::black);          // le contour des rectangles
+//    blackpen.setWidth(1);
+
+//    // Ajout de 1 "rocher" de 45*45 à la position (0,0)
+//        rocher = scene->addRect(0,0,45,45,blackpen,greyBrush);
+//        // On peut déplacer le rectangle de type "Rocher"
+//        rocher->setFlag(QGraphicsItem::ItemIsMovable);
 
 }

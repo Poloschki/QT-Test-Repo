@@ -27,10 +27,9 @@ private slots:
 private:
     Ui::Dialog *ui;
     QGraphicsScene *scene;
-    QGraphicsRectItem *arbre;
-    QGraphicsRectItem *rocher;
 
-    Rectangle *rect;
+    Rectangle *arbre;
+    Rectangle *rocher;
 
 };
 

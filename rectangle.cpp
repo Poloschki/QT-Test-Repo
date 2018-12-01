@@ -21,6 +21,13 @@ Rectangle::Rectangle()
     setFlag(ItemIsMovable); // Permet de déplacer librement le rectangle
 }
 
+Rectangle::Rectangle(int type)
+{
+    Pressed = false;
+    setFlag(ItemIsMovable);
+    this->typeObj = type;
+}
+
 QRectF Rectangle::boundingRect() const
 {
     //position (10,10) du Rectangle 45*45
@@ -32,8 +39,17 @@ void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     //création du rectangle 45*45 à la position (10,10)
     QRectF rec = boundingRect();
     //couleur de l'intérieur du Rectangle : cyan foncé
-    QBrush brush(Qt::darkCyan);
+    QBrush brush(Qt::white);
 
+    switch (this->typeObj) {
+    case ARBRE:
+        brush.setColor(Qt::darkGreen);
+        break;
+     case ROCHER:
+        brush.setColor(Qt::darkGray);
+    default:
+        break;
+    }
 
     // le rectangle change de couleur lorsqu'on appuie dessus
     if(Pressed)

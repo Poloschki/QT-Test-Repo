@@ -5,16 +5,19 @@
 #include <QPen>
 #include <QBrush>
 #include <QGraphicsItem>
-
+#define ARBRE 1
+#define ROCHER 2
 
 class Rectangle : public QGraphicsItem
 {
 public:
     Rectangle();
-
+    Rectangle(int type);
     QRectF boundingRect() const;
     void paint(QPainter * painter, const QStyleOptionGraphicsItem *option, QWidget * widget);
     bool Pressed;
+    int typeObj;
+
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
