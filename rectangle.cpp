@@ -47,6 +47,7 @@ void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         break;
      case ROCHER:
         brush.setColor(Qt::darkGray);
+    break;
     default:
         break;
     }
