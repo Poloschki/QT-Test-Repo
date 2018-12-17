@@ -21,9 +21,6 @@ Dialog::Dialog(QWidget *parent) :
     //Pour avoir le fond en gris foncé dans QhraphicsView
     ui->graphicsView->setBackgroundBrush(QBrush(Qt::darkGray, Qt::SolidPattern));
 
-//      Comment instancier le rectangle de la classe Rectangle
-//    rect  = new Rectangle();       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
-//    scene->addItem(rect);
 }
 
 Dialog::~Dialog()
@@ -69,4 +66,8 @@ void Dialog::on_pushButton_2_pressed()
 //        // On peut déplacer le rectangle de type "Rocher"
 //        rocher->setFlag(QGraphicsItem::ItemIsMovable);
 
+    arbre = new Rectangle(ARBRE);
+    scene->addItem(arbre);
 }
+
+
