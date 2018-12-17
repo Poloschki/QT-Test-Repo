@@ -7,6 +7,7 @@
 #include <QPainter>
 #include <QPen>
 #include <QBrush>
+#include <QKeyEvent>
 #include <QGraphicsItem>
 #define ARBRE 1
 #define ROCHER 2
@@ -23,6 +24,7 @@ public:
     void paint(QPainter * painter, const QStyleOptionGraphicsItem *option, QWidget * widget);
     bool Pressed;
     int typeObj;
+    void keyPressEvent(QKeyEvent *event);
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

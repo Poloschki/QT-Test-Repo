@@ -1,6 +1,9 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
+#include <QApplication>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QDialog>
 #include <QtGui>
 #include <QtCore>
@@ -23,6 +26,8 @@ private slots:
     void on_pushButton_pressed();
 
     void on_pushButton_2_pressed();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::Dialog *ui;

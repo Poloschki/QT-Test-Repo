@@ -34,6 +34,15 @@ QRectF Rectangle::boundingRect() const
     return QRect(10,10,45,45);
 }
 
+void Rectangle::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_S)
+    {
+      this->~Rectangle();
+    }
+
+}
+
 void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     //création du rectangle 45*45 à la position (10,10)
@@ -56,7 +65,6 @@ void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     if(Pressed)
     {
         brush.setColor(Qt::red);
-
     }
     //On paint le Rectangle ici
     painter->fillRect(rec,brush);

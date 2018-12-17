@@ -10,7 +10,7 @@ Dialog::Dialog(QWidget *parent) :
     //création de graphicsView
     scene = new QGraphicsScene(this);
     //essaie de délimitation de la fenêtre GraphicsView
-    ui->graphicsView->setFixedSize(800,600);
+    ui->graphicsView->setFixedSize(800,800);
     ui->graphicsView->setMaximumSize(800,600);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -34,6 +34,8 @@ void Dialog::on_pushButton_pressed()
     arbre  = new Rectangle(ARBRE);       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
     scene->addItem(arbre);
 
+    arbre->setFlag(QGraphicsItem::ItemIsFocusable);
+    arbre->setFocus();
 
 
 //    //Donne la couleur à l'intérieur du rectangle : ici vert foncé
@@ -56,6 +58,10 @@ void Dialog::on_pushButton_2_pressed()
     rocher = new Rectangle(ROCHER);       //le rectangle en Cyan foncé qui devient rouge lorsqu'on appuie dessus
     scene->addItem(rocher);
 
+    rocher->setFlag(QGraphicsItem::ItemIsFocusable);
+    rocher->setFocus();
+
+
 
 //    QBrush greyBrush(Qt::gray);       //les rochers
 //    QPen blackpen(Qt::black);          // le contour des rectangles
@@ -66,8 +72,6 @@ void Dialog::on_pushButton_2_pressed()
 //        // On peut déplacer le rectangle de type "Rocher"
 //        rocher->setFlag(QGraphicsItem::ItemIsMovable);
 
-    arbre = new Rectangle(ARBRE);
-    scene->addItem(arbre);
 }
 
 
