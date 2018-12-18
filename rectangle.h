@@ -11,7 +11,8 @@
 #include <QGraphicsItem>
 #define ARBRE 1
 #define ROCHER 2
-
+#define JOUEUR1 3
+#define JOUEUR2 4
 
 
 class Rectangle : public QGraphicsItem
