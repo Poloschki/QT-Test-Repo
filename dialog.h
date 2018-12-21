@@ -9,6 +9,7 @@
 #include <QtGui>
 #include <QtCore>
 #include "rectangle.h"
+#include "personnages.h"
 #include <QRect>
 
 namespace Ui {
@@ -33,6 +34,8 @@ private:
 
     Rectangle *arbre;
     Rectangle *rocher;
+ //   Personnages *joueur;
+  //  Personnages *joueur2;
 
 };
 

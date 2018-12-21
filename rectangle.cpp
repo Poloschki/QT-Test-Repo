@@ -33,8 +33,8 @@ Rectangle::Rectangle(int type)
 
 QRectF Rectangle::boundingRect() const
 {
-    if(this->typeObj==JOUEUR1)  return QRect(0,630,45,45);
-    if(this->typeObj==JOUEUR2)  return QRect(855,0,45,45);
+  //  if(this->typeObj==JOUEUR1)  return QRect(0,630,45,45);
+ //   if(this->typeObj==JOUEUR2)  return QRect(855,0,45,45);
 
 
     //position (10,10) du Rectangle 45*45
@@ -45,17 +45,42 @@ QRectF Rectangle::boundingRect() const
 
 void Rectangle::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_S)
-    {
-      this->~Rectangle();
+    // printf("%d \n",(int)rotation()%360);
+
+    switch (event->key()) {
+    case Qt::Key_S:
+        this->~Rectangle();
+        break;
+    case Qt::Key_Up:
+        this->setPos(this->x(),this->y()-10);
+
+        break;
+    case Qt::Key_Down:
+        if(this->y()+45<654)
+            this->setPos(this->x(),this->y()+45);
+        break;
+    case Qt::Key_Right:
+        if(this->x()+45<900)
+           this->setPos(this->x()+45,this->y());
+        break;
+    case Qt::Key_Left:
+        this->setPos(this->x()-10,this->y());
+        break;
+    case Qt::Key_Q:
+        this->setRotation(rotation()-10);
+        break;
+    case Qt::Key_D:
+        this->setRotation(rotation()+10);
+    default:
+        break;
     }
 
 }
 
-void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget * widget)
 {
     //création du rectangle 45*45 à la position (10,10)
-    QRectF rec = boundingRect();
+    QRectF rec = this->boundingRect();
     //couleur de l'intérieur du Rectangle : cyan foncé
     QBrush brush(Qt::white);
 
@@ -66,10 +91,10 @@ void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
      case ROCHER:
         brush.setColor(Qt::darkGray);
         break;
-    case JOUEUR1:
-    case JOUEUR2:
-        brush.setColor(Qt::white);
-        break;
+//    case JOUEUR1:
+//    case JOUEUR2:
+//        brush.setColor(Qt::white);
+//        break;
     default:
         break;
     }
@@ -78,8 +103,9 @@ void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     if(Pressed)
     {
         if (this->typeObj == ARBRE || this->typeObj == ROCHER)
-        {brush.setColor(Qt::red);
-        printf("coordoné x %f, y : %f \n",this->x(),this->y());
+        {
+            brush.setColor(Qt::red);
+      //    printf("coordoné x %f, y : %f \n",this->x(),this->y());
         }
      }
 

@@ -11,8 +11,8 @@
 #include <QGraphicsItem>
 #define ARBRE 1
 #define ROCHER 2
-#define JOUEUR1 3
-#define JOUEUR2 4
+//#define JOUEUR1 3
+//#define JOUEUR2 4
 
 
 class Rectangle : public QGraphicsItem
@@ -22,7 +22,7 @@ public:
     Rectangle(int type);
     ~Rectangle(){}
     QRectF boundingRect() const;
-    void paint(QPainter * painter, const QStyleOptionGraphicsItem *option, QWidget * widget);
+    void paint(QPainter * painter, const QStyleOptionGraphicsItem *option,QWidget * widget);
     bool Pressed;
     int typeObj;
     void keyPressEvent(QKeyEvent *event);

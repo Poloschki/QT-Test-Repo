@@ -16,11 +16,13 @@ Dialog::Dialog(QWidget *parent) :
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
-    Rectangle* joueur1 = new Rectangle (JOUEUR1);
-    Rectangle* joueur2 = new Rectangle(JOUEUR2);
+//    joueur = new Personnages();
+////    joueur2 = new Personnages(PERSO2);
 
-    scene->addItem(joueur1);
-    scene->addItem(joueur2);
+//    scene->addItem(joueur);
+//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
+//    joueur->setFocus();
+  //  scene->addItem(joueur2);
 
 
 
@@ -52,6 +54,15 @@ void Dialog::on_pushButton_pressed()
 
     arbre->setFlag(QGraphicsItem::ItemIsFocusable);
     arbre->setFocus();
+
+
+
+//    joueur = new Personnages();
+////    joueur2 = new Personnages(PERSO2);
+
+//    scene->addItem(joueur);
+//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
+//    joueur->setFocus();
 
 }
 
