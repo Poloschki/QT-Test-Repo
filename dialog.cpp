@@ -15,9 +15,31 @@ Dialog::Dialog(QWidget *parent) :
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    Player* play1 = new Player();
+    play1->setPixmap(QPixmap(":/images/player.png"));
+    play1->setX(0);//position initial
+    play1->setY(630);//position initial
+    scene->addItem(play1);
+    play1->setFlag(QGraphicsItem::ItemIsFocusable);
+    play1->setFocus();
 
-//    joueur = new Personnages();
-////    joueur2 = new Personnages(PERSO2);
+    Player* play2 = new Player();
+    play2->setPixmap(QPixmap(":/images/player.png"));
+    play2->setX(855);//position initial
+    play2->setY(0);//position initial
+    scene->addItem(play2);
+    play2->setFlag(QGraphicsItem::ItemIsFocusable);
+    play2->setFocus();
+
+
+    if((play1->tir == false))
+    {
+        printf("affiche le tir \n");
+        Bullet * bullet = new Bullet();
+        bullet->setPos(this->x(),this->y());
+        scene->addItem(bullet);
+    }
+    play1->tir= false; play2->tir = false;
 
 //    scene->addItem(joueur);
 //    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -37,7 +59,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->graphicsView->setScene(scene);
 
     //Pour avoir le fond en gris foncé dans QhraphicsView
-    ui->graphicsView->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
+    ui->graphicsView->setBackgroundBrush(QBrush(Qt::blue, Qt::SolidPattern));
 
 }
 
@@ -55,7 +77,10 @@ void Dialog::on_pushButton_pressed()
     arbre->setFlag(QGraphicsItem::ItemIsFocusable);
     arbre->setFocus();
 
-
+    printf("affiche le tir \n");
+    Bullet * bullet = new Bullet();
+    bullet->setPos(this->x(),this->y());
+    scene->addItem(bullet);
 
 //    joueur = new Personnages();
 ////    joueur2 = new Personnages(PERSO2);

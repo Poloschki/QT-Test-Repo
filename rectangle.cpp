@@ -43,39 +43,39 @@ QRectF Rectangle::boundingRect() const
 
 }
 
-void Rectangle::keyPressEvent(QKeyEvent *event)
-{
-    // printf("%d \n",(int)rotation()%360);
+//void Rectangle::keyPressEvent(QKeyEvent *event)
+//{
+//    // printf("%d \n",(int)rotation()%360);
 
-    switch (event->key()) {
-    case Qt::Key_S:
-        this->~Rectangle();
-        break;
-    case Qt::Key_Up:
-        this->setPos(this->x(),this->y()-10);
+//    switch (event->key()) {
+//    case Qt::Key_S:
+//        this->~Rectangle();
+//        break;
+//    case Qt::Key_Up:
+//        this->setPos(this->x(),this->y()-10);
 
-        break;
-    case Qt::Key_Down:
-        if(this->y()+45<654)
-            this->setPos(this->x(),this->y()+45);
-        break;
-    case Qt::Key_Right:
-        if(this->x()+45<900)
-           this->setPos(this->x()+45,this->y());
-        break;
-    case Qt::Key_Left:
-        this->setPos(this->x()-10,this->y());
-        break;
-    case Qt::Key_Q:
-        this->setRotation(rotation()-10);
-        break;
-    case Qt::Key_D:
-        this->setRotation(rotation()+10);
-    default:
-        break;
-    }
+//        break;
+//    case Qt::Key_Down:
+//        if(this->y()+45<654)
+//            this->setPos(this->x(),this->y()+45);
+//        break;
+//    case Qt::Key_Right:
+//        if(this->x()+45<900)
+//           this->setPos(this->x()+45,this->y());
+//        break;
+//    case Qt::Key_Left:
+//        this->setPos(this->x()-10,this->y());
+//        break;
+//    case Qt::Key_Q:
+//        this->setRotation(rotation()-10);
+//        break;
+//    case Qt::Key_D:
+//        this->setRotation(rotation()+10);
+//    default:
+//        break;
+//    }
 
-}
+//}
 
 void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget * widget)
 {

@@ -27,12 +27,17 @@ SOURCES += \
         main.cpp \
     rectangle.cpp \
     dialog.cpp \
-    personnages.cpp
+    player.cpp \
+    bullet.cpp
 
 HEADERS += \
     rectangle.h \
     dialog.h \
-    personnages.h
+    player.h \
+    bullet.h
 
 FORMS += \
         dialog.ui
+
+RESOURCES += \
+    res.qrc

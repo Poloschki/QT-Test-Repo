@@ -9,8 +9,10 @@
 #include <QtGui>
 #include <QtCore>
 #include "rectangle.h"
-#include "personnages.h"
+#include "player.h"
+#include "bullet.h"
 #include <QRect>
+
 
 namespace Ui {
     class Dialog;
@@ -34,8 +36,6 @@ private:
 
     Rectangle *arbre;
     Rectangle *rocher;
- //   Personnages *joueur;
-  //  Personnages *joueur2;
 
 };
 
