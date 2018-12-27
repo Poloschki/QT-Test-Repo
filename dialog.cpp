@@ -10,16 +10,34 @@ Dialog::Dialog(QWidget *parent) :
     //création de graphicsView
     scene = new QGraphicsScene(this);
     //essaie de délimitation de la fenêtre GraphicsView
-    ui->graphicsView->setFixedSize(800,800);
-    ui->graphicsView->setMaximumSize(800,600);
+    ui->graphicsView->setFixedSize(910,700);
+    ui->graphicsView->setMaximumSize(910,700);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
+//    joueur = new Personnages();
+////    joueur2 = new Personnages(PERSO2);
+
+//    scene->addItem(joueur);
+//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
+//    joueur->setFocus();
+  //  scene->addItem(joueur2);
+
+
+
+    // Add the vertical lines first, paint them red
+    for (int x=0; x<=900; x+=45)
+        scene->addLine(x,0,x,675, QPen(Qt::yellow));
+
+    // Now add the horizontal lines, paint them green
+    for (int y=0; y<=700; y+=45)
+        scene->addLine(0,y,900,y, QPen(Qt::green));
+
     ui->graphicsView->setScene(scene);
 
     //Pour avoir le fond en gris foncé dans QhraphicsView
-    ui->graphicsView->setBackgroundBrush(QBrush(Qt::darkGray, Qt::SolidPattern));
+    ui->graphicsView->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
 
 }
 
@@ -38,17 +56,14 @@ void Dialog::on_pushButton_pressed()
     arbre->setFocus();
 
 
-//    //Donne la couleur à l'intérieur du rectangle : ici vert foncé
-//    QBrush greenBrush(Qt::darkGreen); //les arbres/ arbustes
-//    //Donne la couleur du conteur du rectangle : ici noir
-//    QPen blackpen(Qt::black);          // le contour des rectangles
-//    //Donne l'épaisseur du contour
-//    blackpen.setWidth(1);
 
-//    // Ajout de 1 "arbre" de 45*45 à la position (45,45)
-//        arbre = scene->addRect(45,45,45,45,blackpen,greenBrush);
-//     //Pour pouvoir déplacer le rectangle
-//        arbre->setFlag(QGraphicsItem::ItemIsMovable);
+//    joueur = new Personnages();
+////    joueur2 = new Personnages(PERSO2);
+
+//    scene->addItem(joueur);
+//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
+//    joueur->setFocus();
+
 }
 
 //  Bouton pour le rocher
@@ -61,16 +76,6 @@ void Dialog::on_pushButton_2_pressed()
     rocher->setFlag(QGraphicsItem::ItemIsFocusable);
     rocher->setFocus();
 
-
-
-//    QBrush greyBrush(Qt::gray);       //les rochers
-//    QPen blackpen(Qt::black);          // le contour des rectangles
-//    blackpen.setWidth(1);
-
-//    // Ajout de 1 "rocher" de 45*45 à la position (0,0)
-//        rocher = scene->addRect(0,0,45,45,blackpen,greyBrush);
-//        // On peut déplacer le rectangle de type "Rocher"
-//        rocher->setFlag(QGraphicsItem::ItemIsMovable);
 
 }
 

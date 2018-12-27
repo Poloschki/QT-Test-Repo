@@ -3,11 +3,13 @@
 
 #include <QApplication>
 #include <QGraphicsScene>
+#include <QWidget>
 #include <QGraphicsView>
 #include <QDialog>
 #include <QtGui>
 #include <QtCore>
 #include "rectangle.h"
+#include "personnages.h"
 #include <QRect>
 
 namespace Ui {
@@ -26,15 +28,14 @@ private slots:
     void on_pushButton_pressed();
 
     void on_pushButton_2_pressed();
-
-    void on_pushButton_3_clicked();
-
 private:
     Ui::Dialog *ui;
     QGraphicsScene *scene;
 
     Rectangle *arbre;
     Rectangle *rocher;
+ //   Personnages *joueur;
+  //  Personnages *joueur2;
 
 };
 
