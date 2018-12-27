@@ -77,11 +77,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->graphicsView->setScene(scene);
 
     //Pour avoir le fond en gris foncé dans QhraphicsView
-<<<<<<< HEAD
     ui->graphicsView->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
-=======
-    ui->graphicsView->setBackgroundBrush(QBrush(Qt::blue, Qt::SolidPattern));
->>>>>>> 6eba9e97d8357582c4655f38c591939a8b01f6fe
 
 }
 
@@ -107,7 +103,6 @@ void Dialog::on_pushButton_pressed()
 //    joueur = new Personnages();
 ////    joueur2 = new Personnages(PERSO2);
 
-<<<<<<< HEAD
 
 //    joueur = new Personnages();
 ////    joueur2 = new Personnages(PERSO2);
@@ -116,12 +111,6 @@ void Dialog::on_pushButton_pressed()
 //    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
 //    joueur->setFocus();
 
-=======
-//    scene->addItem(joueur);
-//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
-//    joueur->setFocus();
-
->>>>>>> 6eba9e97d8357582c4655f38c591939a8b01f6fe
 }
 
 //  Bouton pour le rocher
@@ -136,5 +125,3 @@ void Dialog::on_pushButton_2_pressed()
 
 
 }
-
-

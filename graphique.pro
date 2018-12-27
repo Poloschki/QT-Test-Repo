@@ -27,22 +27,12 @@ SOURCES += \
         main.cpp \
     rectangle.cpp \
     dialog.cpp \
-<<<<<<< HEAD
     personnages.cpp
-=======
-    player.cpp \
-    bullet.cpp
->>>>>>> 6eba9e97d8357582c4655f38c591939a8b01f6fe
 
 HEADERS += \
     rectangle.h \
     dialog.h \
-<<<<<<< HEAD
     personnages.h
-=======
-    player.h \
-    bullet.h
->>>>>>> 6eba9e97d8357582c4655f38c591939a8b01f6fe
 
 FORMS += \
         dialog.ui
