@@ -15,7 +15,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    Player* play1 = new Player();
+    Personnages * play1 = new Personnages();
     play1->setPixmap(QPixmap(":/images/player.png"));
     play1->setX(0);//position initial
     play1->setY(630);//position initial
@@ -23,28 +23,13 @@ Dialog::Dialog(QWidget *parent) :
     play1->setFlag(QGraphicsItem::ItemIsFocusable);
     play1->setFocus();
 
-    Player* play2 = new Player();
+    Personnages *play2 = new Personnages();
     play2->setPixmap(QPixmap(":/images/player.png"));
     play2->setX(855);//position initial
     play2->setY(0);//position initial
     scene->addItem(play2);
     play2->setFlag(QGraphicsItem::ItemIsFocusable);
     play2->setFocus();
-
-
-    if((play1->tir == false))
-    {
-        printf("affiche le tir \n");
-        Bullet * bullet = new Bullet();
-        bullet->setPos(this->x(),this->y());
-        scene->addItem(bullet);
-    }
-    play1->tir= false; play2->tir = false;
-
-//    scene->addItem(joueur);
-//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
-//    joueur->setFocus();
-  //  scene->addItem(joueur2);
 
 
 
@@ -56,13 +41,6 @@ Dialog::Dialog(QWidget *parent) :
     for (int y=0; y<=700; y+=45)
         scene->addLine(0,y,900,y, QPen(Qt::green));
 
-//    joueur = new Personnages();
-////    joueur2 = new Personnages(PERSO2);
-
-//    scene->addItem(joueur);
-//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
-//    joueur->setFocus();
-  //  scene->addItem(joueur2);
 
 
 
@@ -81,6 +59,7 @@ Dialog::Dialog(QWidget *parent) :
 
 }
 
+
 Dialog::~Dialog()
 {
     delete ui;
@@ -94,23 +73,7 @@ void Dialog::on_pushButton_pressed()
 
     arbre->setFlag(QGraphicsItem::ItemIsFocusable);
     arbre->setFocus();
-
-    printf("affiche le tir \n");
-    Bullet * bullet = new Bullet();
-    bullet->setPos(this->x(),this->y());
-    scene->addItem(bullet);
-
-//    joueur = new Personnages();
-////    joueur2 = new Personnages(PERSO2);
-
-
-//    joueur = new Personnages();
-////    joueur2 = new Personnages(PERSO2);
-
-//    scene->addItem(joueur);
-//    joueur->setFlag(QGraphicsItem::ItemIsFocusable);
-//    joueur->setFocus();
-
+    printf("Pos x : %d, pos y : %d",arbre->getX(), arbre->getY());
 }
 
 //  Bouton pour le rocher

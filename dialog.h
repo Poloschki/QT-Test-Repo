@@ -35,8 +35,8 @@ private:
 
     Rectangle *arbre;
     Rectangle *rocher;
- //   Personnages *joueur;
-  //  Personnages *joueur2;
+//    Personnages *play1;
+//    Personnages *play2;
 
 };
 

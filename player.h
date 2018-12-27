@@ -5,9 +5,9 @@
 #include <QKeyEvent>
 #include "bullet.h"
 
-class Player : public QGraphicsPixmapItem{
+class Personnages : public QGraphicsPixmapItem{
 public:
-    Player();
+    Personnages();
     void keyPressEvent(QKeyEvent *event);
     bool tir = false;
 };
