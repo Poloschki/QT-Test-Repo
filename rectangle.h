@@ -25,7 +25,7 @@ public:
     void paint(QPainter * painter, const QStyleOptionGraphicsItem *option,QWidget * widget);
     bool Pressed;
     int typeObj;
-    void keyPressEvent(QKeyEvent *event);
+ //  void keyPressEvent(QKeyEvent *event);
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
